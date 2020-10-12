@@ -3,9 +3,23 @@
  * @author Cooper Anderson (andersc7), Joseph Peters (petersjl)
  */
 
-/**
- * This line is so that we do not have squiggly lines under every instance of the word "firebase"
- */
-firebase = firebase || {};
+import Page from "./page/page.js";
+import PageSales from "./page/sales.js";
+import PageWishlist from "./page/wishlist.js";
 
-firebase.firestore()
+/**
+ * Page instance
+ * @type Page
+ */
+let page;
+
+$(() => {
+	if (document.querySelector("#pageWishlist")) page = new PageWishlist();
+	if (document.querySelector("#pageSales")) page = new PageSales();
+
+	if (page) {
+		Page.instance = page;
+		console.log(page);
+		page.main();
+	}
+});
