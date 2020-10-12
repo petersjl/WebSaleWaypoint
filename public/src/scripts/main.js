@@ -19,7 +19,6 @@ $(() => {
 
 	if (page) {
 		Page.instance = page;
-		console.log(page);
 		page.main();
 	}
 });
