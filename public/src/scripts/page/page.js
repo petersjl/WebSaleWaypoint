@@ -9,7 +9,9 @@ export default class Page {
 	 */
 	static instance;
 
-	constructor() {}
+	constructor() {
+		// TODO: load settings
+	}
 
 	redirect(url) {
 		// TODO: persist settings
