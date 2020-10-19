@@ -29,5 +29,5 @@ Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 ### `yarn deploy`
 
-Deploy the app to Firebase at [https://sale-waypoint.web.app](https://sale-waypoint.web.app)
+Deploy the app to Firebase at [https://csse280-sale-waypoint.web.app](https://csse280-sale-waypoint.web.app)
 
