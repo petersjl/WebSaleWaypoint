@@ -69,3 +69,28 @@ Deploy the app to Firebase at
        /* ... rest of class ... */
    }
    ```
+   You can either make it such that all other classes access the information
+   through the instance variable, or create static methods inside the class
+   that reference its own `instance` instead of `this`.
+   For example:
+   > Declaration
+   ```javascript
+   // Method A
+   get length() {
+       return this.snapshots.length;
+   }
+   
+   // Method B
+   static get length() {
+       return ListManager.instance.snapshots.length;
+   }
+   ```
+   > Usage
+   ```javascript
+   // Method A
+   const length = ListManager.instance.length;
+   
+   // Method B
+   const length = ListManager.length;
+   ```
+   Personally, we will be using `Method B` throughout this project.
