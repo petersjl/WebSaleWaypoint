@@ -1,4 +1,5 @@
 # Sale Waypoint
+Saving gamers money, one objective at a time.
 
 ## Creators
 * Cooper Anderson (andersc7)
