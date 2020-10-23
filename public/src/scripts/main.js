@@ -13,6 +13,10 @@ import PageWishlist from "./page/wishlist.js";
  */
 let page;
 
+/**
+ * Here is where you would implement your auth code, redirecting as necessary.
+ */
+
 $(() => {
 	if (document.querySelector("#pageWishlist")) page = new PageWishlist();
 	if (document.querySelector("#pageSales")) page = new PageSales();

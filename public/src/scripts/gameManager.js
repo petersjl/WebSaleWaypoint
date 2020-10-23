@@ -1,6 +1,7 @@
 import Constants from "./util/constants.js";
-import Game from "./model/game.js";
 import Conversions from "./util/conversions.js";
+import Game from "./model/game.js";
+
 
 export default class GameManager {
 	/**

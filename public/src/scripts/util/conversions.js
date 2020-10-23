@@ -1,7 +1,7 @@
+import Constants from "./constants.js";
 import Game from "../model/game.js";
 import Listing from "../model/listing.js";
 import Store from "../model/store.js";
-import Constants from "./constants.js";
 
 export default class Conversions {
 	/**
