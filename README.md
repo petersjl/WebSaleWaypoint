@@ -65,7 +65,7 @@ Deploy the app to Firebase at
         * @private
         */
        static instance;
-   
+
        /* ... rest of class ... */
    }
    ```
@@ -75,21 +75,27 @@ Deploy the app to Firebase at
    For example:
    > Declaration
    ```javascript
-   // Method A
-   get length() {
-       return this.snapshots.length;
-   }
-   
-   // Method B
-   static get length() {
-       return ListManager.instance.snapshots.length;
+   export default class ListManager {
+       /** ... */
+
+       // Method A
+       get length() {
+           return this.snapshots.length;
+       }
+
+       // Method B
+       static get length() {
+           return ListManager.instance.snapshots.length;
+       }
+
+       /** ... */
    }
    ```
    > Usage
    ```javascript
    // Method A
    const length = ListManager.instance.length;
-   
+
    // Method B
    const length = ListManager.length;
    ```
