@@ -26,6 +26,6 @@ export default class Listing {
 			[Constants.fb.field.listing.LISTED]: listing ? listing.listed : false,
 			[Constants.fb.field.listing.PRICE]: listing ? listing.price : 0,
 			[Constants.fb.field.listing.SALE]: listing ? listing.sale : 0
-		}
+		};
 	}
 }

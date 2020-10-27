@@ -55,7 +55,7 @@ export default class ListManager {
 
 	/**
 	 * Number of Games in the list
-	 * @returns {*}
+	 * @returns {number}
 	 */
 	static get length() {
 		return ListManager.instance.snapshots.length;

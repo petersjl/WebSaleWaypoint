@@ -19,6 +19,8 @@ export default class Page {
 	}
 
 	/**
+	 * This page's main method, where you set up the controllers, etc.
+	 * This is the equivalent of what we were doing in the follow-alongs
 	 * @abstract
 	 */
 	main() {}
