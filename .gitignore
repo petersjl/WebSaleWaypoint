@@ -2,7 +2,9 @@
 
 # IDE
 .idea/
+
 yarn.lock
+package-lock.json
 
 # dependencies
 /node_modules
