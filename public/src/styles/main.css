@@ -1,5 +1,5 @@
 /* This file is used to for our custom content used throughout the site */
-#brandingImage{
+#brandingImage {
 	margin: 10px auto 30px;
 	width: 200px;
 	height: 200px;
@@ -30,3 +30,20 @@ body > #fab {
 .btn-secondary {
 	color: white !important;
 }
+#icon {
+	position: relative;
+	bottom: -4px;
+}
+
+#icon.icon-sales {
+	color: var(--colorSale);
+}
+
+#icon.icon-wishlist {
+	color: var(--colorWishlist);
+}
+
+#icon.icon-about {
+	color: var(--colorTextLink);
+}
+

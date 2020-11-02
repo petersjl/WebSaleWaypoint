@@ -3,7 +3,9 @@
  * @author Cooper Anderson (andersc7), Joseph Peters (petersjl)
  */
 
+import AuthManager from "./authManager.js";
 import Page from "./page/page.js";
+import PageLogin from "./page/login.js";
 import PageSales from "./page/sales.js";
 import PageWishlist from "./page/wishlist.js";
 
@@ -13,16 +15,31 @@ import PageWishlist from "./page/wishlist.js";
  */
 let page;
 
-/**
- * Here is where you would implement your auth code, redirecting as necessary.
- */
+function checkForRedirects() {
+	if (document.querySelector("#pageLogin") && AuthManager.isSignedIn) {
+		window.location.href = "./sales.html";
+	}
+	if (!document.querySelector("#pageLogin") && !AuthManager.isSignedIn) {
+		window.location.href = "/";
+	}
+}
 
-$(() => {
-	if (document.querySelector("#pageWishlist")) page = new PageWishlist();
+function initializePage() {
+	if (document.querySelector("#pageLogin")) page = new PageLogin();
 	if (document.querySelector("#pageSales")) page = new PageSales();
+	if (document.querySelector("#pageWishlist")) page = new PageWishlist();
 
 	if (page) {
 		Page.instance = page;
 		page.main();
 	}
+}
+
+$(() => {
+	AuthManager.instance = new AuthManager();
+	AuthManager.startListeners(() => {
+		console.log(`Auth state changed: signedIn = ${AuthManager.isSignedIn}`);
+		checkForRedirects();
+		initializePage();
+	});
 });
