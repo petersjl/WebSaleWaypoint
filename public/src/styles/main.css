@@ -10,7 +10,7 @@
 	text-align: center;
 }
 
-body > #fab {
+#fab {
     position: fixed;
     right: 10px;
     bottom: 10px;
@@ -19,17 +19,18 @@ body > #fab {
     z-index: 100;
 }
 
-.form-control {
-	color: white;
+#content {
+	opacity: 0;
 }
 
-.btn-primary{
-	color: var(--colorSale) !important;
+.btn-sale {
+	color: var(--colorSale);
 }
 
-.btn-secondary {
-	color: white !important;
-}
+/* .btn-secondary { */
+/* 	color: white !important; */
+/* } */
+
 #icon {
 	position: relative;
 	bottom: -4px;
