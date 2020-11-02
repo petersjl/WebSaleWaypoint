@@ -32,7 +32,7 @@ export default class Page {
 		// TODO: persist settings
 		$("#content").animate({opacity: 0}, Page.fade, () => {
 			window.location.href = url;
-		})
+		});
 	}
 
 	/**
