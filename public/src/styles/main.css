@@ -24,7 +24,7 @@
 }
 
 .btn-sale {
-	color: var(--colorSale);
+	color: var(--colorSale) !important;
 }
 
 #icon {
