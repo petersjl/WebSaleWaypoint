@@ -5,3 +5,20 @@
 	height: 200px;
 }
 
+#icon {
+	position: relative;
+	bottom: -4px;
+}
+
+#icon.icon-sales {
+	color: var(--colorSale);
+}
+
+#icon.icon-wishlist {
+	color: var(--colorWishlist);
+}
+
+#icon.icon-about {
+	color: var(--colorTextLink);
+}
+
