@@ -10,6 +10,7 @@ export default class Page {
 	 * @type Page
 	 */
 	static instance;
+	static fade = 200;
 
 	/**
 	 * Url parameters
@@ -20,12 +21,18 @@ export default class Page {
 	constructor() {
 		this.urlParams = new URLSearchParams(window.location.search);
 
+		$("#linkSales").on("click", this.redirect.bind(this, "./sales.html"));
+		$("#linkWishlist").on("click", this.redirect.bind(this, "./wishlist.html"));
+		$("#linkAbout").on("click", this.redirect.bind(this, "./about.html"));
 		$("#logout").on("click", AuthManager.signOut);
+		$("#content").animate({opacity: 1}, Page.fade);
 	}
 
 	redirect(url) {
 		// TODO: persist settings
-		window.location.href = url;
+		$("#content").animate({opacity: 0}, Page.fade, () => {
+			window.location.href = url;
+		})
 	}
 
 	/**
