@@ -1,11 +1,7 @@
 /* This file is used to for our custom content used throughout the site */
-#brandingImage{
+#brandingImage {
 	margin: 10px auto 30px;
 	width: 200px;
 	height: 200px;
 }
 
-#pageHome {
-	justify-content: center;
-	text-align: center;
-}
