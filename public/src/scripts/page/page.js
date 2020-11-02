@@ -36,7 +36,15 @@ export default class Page {
 	}
 
 	/**
+	 * This page's init method. It is called when the page is first loaded.
+	 * Note, at this point the user may NOT be signed in.
+	 * @abstract
+	 */
+	init() {}
+
+	/**
 	 * This page's main method, where you set up the controllers, etc.
+	 * This is only called once the user is signed in.
 	 * This is the equivalent of what we were doing in the follow-alongs
 	 * @abstract
 	 */

@@ -1,9 +1,11 @@
 import Page from "./page.js";
 
 export default class PageLogin extends Page {
-	main() {
+	init() {
 		this.initFirebaseUI();
 	}
+
+	main() {}
 
 	initFirebaseUI() {
 		const uiConfig = {

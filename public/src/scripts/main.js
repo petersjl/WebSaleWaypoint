@@ -33,15 +33,16 @@ function initializePage() {
 
 	if (page) {
 		Page.instance = page;
-		page.main();
+		page.init();
 	}
 }
 
 $(() => {
 	AuthManager.instance = new AuthManager();
+	initializePage();
 	AuthManager.startListeners(() => {
 		console.log(`Auth state changed: signedIn = ${AuthManager.isSignedIn}`);
 		checkForRedirects();
-		initializePage();
+		page.main();
 	});
 });
