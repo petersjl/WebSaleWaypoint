@@ -46,3 +46,14 @@ body {
 .card-link:hover {
 	color: var(--colorSale);
 }
+
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: var(--colorScrollbar);
+}
+

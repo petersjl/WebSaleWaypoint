@@ -15,7 +15,7 @@
     right: 10px;
     bottom: 10px;
     background: var(--colorSale);
-    color: #ffffff;
+    color: var(--colorTextPrimary);
     z-index: 100;
 }
 
@@ -48,16 +48,5 @@
 	height: calc(100vh - 300px);
 	min-height: 150px;
 	overflow-y: scroll;
-}
-
-.modal-body::-webkit-scrollbar {
-	-webkit-appearance: none;
-	width: 7px;
-}
-
-
-.modal-body::-webkit-scrollbar-thumb {
-	border-radius: 5px;
-	background-color: var(--colorScrollbar);
 }
 
