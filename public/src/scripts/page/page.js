@@ -1,3 +1,5 @@
+import AuthManager from "../authManager.js";
+
 /**
  * Abstract Page class
  * @abstract
@@ -17,6 +19,8 @@ export default class Page {
 
 	constructor() {
 		this.urlParams = new URLSearchParams(window.location.search);
+
+		$("#logout").on("click", AuthManager.signOut);
 	}
 
 	redirect(url) {
