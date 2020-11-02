@@ -27,10 +27,6 @@
 	color: var(--colorSale);
 }
 
-/* .btn-secondary { */
-/* 	color: white !important; */
-/* } */
-
 #icon {
 	position: relative;
 	bottom: -4px;
@@ -46,5 +42,23 @@
 
 #icon.icon-about {
 	color: var(--colorTextLink);
+}
+
+.modal-body {
+	height: calc(100vh - 300px);
+	min-height: 150px;
+	/* overflow: scroll; */
+	overflow-y: scroll;
+}
+
+.modal-body::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 7px;
+}
+
+
+.modal-body::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: var(--colorScrollbar);
 }
 
