@@ -9,8 +9,14 @@ export default class Page {
 	 */
 	static instance;
 
+	/**
+	 * Url parameters
+	 * @type URLSearchParams
+	 */
+	urlParams;
+
 	constructor() {
-		// TODO: load settings
+		this.urlParams = new URLSearchParams(window.location.search);
 	}
 
 	redirect(url) {
