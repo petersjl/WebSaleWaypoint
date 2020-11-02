@@ -28,7 +28,67 @@
 	</nav>
 	<div id="pageSales" class="container">
 	</div>
+	<button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#addGameDialog">
+		<i class="material-icons">add</i>
+	</button>
 	<section id="modals">
+		<div class="modal fade" id="addGameDialog" tabindex="-1" role="dialog" aria-labelledby="Add game dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title">Add a game</h5>
+				</div>
+				<div class="modal-body">
+					<div class="form-group .bmd-form-group">
+						<label for="inputTitle" class="bmd-label-floating">Title:</label>
+						<input type="text" class="form-control" id="inputTitle">
+						<span class="bmd-help">The title of the game</span>
+					</div>
+					<div class="form-group bmd-form-group">
+						<label for="inputDev" class="bmd-label-floating">Developer: </label>
+						<input type="text" class="form-control" id="inputDev">
+						<span class="bmd-help">Who developed the game</span>
+					</div>
+					<div class="form-group bmd-form-group">
+						<label for="inputAbout" class="bmd-label-floating">About: </label>
+						<input type="text" class="form-control" id="inputAbout">
+						<span class="bmd-help">Who developed the game</span>
+					</div>
+
+					<div class="form-group bmd-form-group">
+						<label for="inputSteamPrice" class="bmd-label-floating">Steam price: </label>
+						<input type="text" class="form-control" id="inputSteamPrice">
+					</div>
+					<div class="form-group bmd-form-group">
+						<label for="inputSteamSale" class="bmd-label-floating">Steam sale: </label>
+						<input type="text" class="form-control" id="inputSteamSale">
+					</div>
+
+					<div class="form-group bmd-form-group">
+						<label for="inputXboxPrice" class="bmd-label-floating">Xbox price: </label>
+						<input type="text" class="form-control" id="inputXboxPrice">
+					</div>
+					<div class="form-group bmd-form-group">
+						<label for="inputXboxSale" class="bmd-label-floating">Xbox sale: </label>
+						<input type="text" class="form-control" id="inputXboxSale">
+					</div>
+
+					<div class="form-group bmd-form-group">
+						<label for="inputPlaystationPrice" class="bmd-label-floating">Playstation price: </label>
+						<input type="text" class="form-control" id="inputPlaystationPrice">
+					</div>
+					<div class="form-group bmd-form-group">
+						<label for="inputPlaystationSale" class="bmd-label-floating">Playstation sale: </label>
+						<input type="text" class="form-control" id="inputPlaystationSale">
+					</div>
+				</div>
+				<div class="modal-footer">
+				  <button class="btn btn-secondary" type="button" data-dismiss="modal">CANCEL</button>
+				  <button id="submitAddPhoto" class="btn btn-primary" type="button" data-dismiss="modal">CREATE</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
 	</section>
 	<section id="templates">
 	</section>

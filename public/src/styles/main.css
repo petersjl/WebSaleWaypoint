@@ -9,3 +9,24 @@
 	justify-content: center;
 	text-align: center;
 }
+
+body > #fab {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background: var(--colorSale);
+    color: #ffffff;
+    z-index: 100;
+}
+
+.form-control {
+	color: white;
+}
+
+.btn-primary{
+	color: var(--colorSale) !important;
+}
+
+.btn-secondary {
+	color: white !important;
+}
