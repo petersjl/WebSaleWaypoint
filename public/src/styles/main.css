@@ -1,7 +1,7 @@
 /* This file is used to for our custom content used throughout the site */
 
 :root {
-	--store-icon-size: 50px;
+	--storeIconSize: 50px;
 }
 
 #brandingImage {
@@ -74,16 +74,16 @@
 
 .store-icon > img {
 	display: block;
-	width: var(--store-icon-size);
-	height: var(--store-icon-size);
+	width: var(--storeIconSize);
+	height: var(--storeIconSize);
 	margin-left: auto;
 	margin-right: auto;
 }
 
 @media (max-width: 575.98px) {
 	.store-icon > img {
-		width: calc(0.8 * var(--store-icon-size));
-		height: calc(0.8 * var(--store-icon-size));
+		width: calc(0.8 * var(--storeIconSize));
+		height: calc(0.8 * var(--storeIconSize));
 	}
 }
 

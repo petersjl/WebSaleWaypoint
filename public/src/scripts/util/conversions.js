@@ -13,7 +13,8 @@ export default class Conversions {
 		const game = new Game(
 			snapshot.get(Constants.fb.field.TITLE),
 			snapshot.get(Constants.fb.field.DEVELOPER),
-			snapshot.get(Constants.fb.field.DESCRIPTION)
+			snapshot.get(Constants.fb.field.DESCRIPTION),
+			snapshot.get(Constants.fb.field.IMAGE)
 		);
 		// TODO iterate store listings
 		game.id = snapshot.id;

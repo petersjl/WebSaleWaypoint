@@ -22,15 +22,21 @@ export default class Game {
 	 */
 	description;
 	/**
+	 * Full URL for the Game's image
+	 * @type {string}
+	 */
+	image;
+	/**
 	 * Store pricing information
 	 * @type {Map<StoreType, Listing>}
 	 */
 	stores;
 
-	constructor(title="", developer="", description="") {
+	constructor(title="", developer="", description="", image="") {
 		this.title = title;
 		this.developer = developer;
 		this.description = description;
+		this.image = image;
 		this.stores = new Map();
 	}
 }

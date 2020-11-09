@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="lib/styles/bootstrap-material-design.min.css">
 	<link rel="stylesheet" href="src/styles/colors.css">
 	<link rel="stylesheet" href="src/styles/override.css">
+	<link rel="stylesheet" href="src/styles/game.css">
 	<link rel="stylesheet" href="src/styles/main.css">
 	<title>Sale Waypoint</title>
 </head>
@@ -28,6 +29,7 @@
 	</nav>
 	<div id="content">
 		<div id="pageSales" class="container">
+			<div id="games"></div>
 		</div>
 		<button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#dialogGameAdd">
 			<i class="material-icons">add_location</i>
@@ -59,7 +61,7 @@
 
 					<div class="store-group">
 						<div class="store-icon">
-							<img src="img/steam.png"/>
+							<img src="img/steam/yes.png"/>
 						</div>
 						<div class="form-group bmd-form-group">
 							<label for="inputSteamPrice" class="bmd-label-floating">Steam price: </label>
@@ -73,7 +75,7 @@
 
 					<div class="store-group">
 						<div class="store-icon">
-							<img src="img/xbox.png"/>
+							<img src="img/xbox/yes.png"/>
 						</div>
 						<div class="form-group bmd-form-group">
 							<label for="inputXboxPrice" class="bmd-label-floating">Xbox price: </label>
@@ -87,7 +89,7 @@
 
 					<div class="store-group">
 						<div class="store-icon">
-							<img src="img/playstation.png"/>
+							<img src="img/playstation/yes.png"/>
 						</div>
 						<div class="form-group bmd-form-group">
 							<label for="inputPlaystationPrice" class="bmd-label-floating">Playstation price: </label>
@@ -101,7 +103,7 @@
 
 					<div class="store-group">
 						<div class="store-icon">
-							<img src="img/itch.png"/>
+							<img src="img/itch/yes.png"/>
 						</div>
 						<div class="form-group bmd-form-group">
 							<label for="inputItchPrice" class="bmd-label-floating">Itch price: </label>
@@ -115,7 +117,7 @@
 
 					<div class="store-group">
 						<div class="store-icon">
-							<img src="img/nintendo.png"/>
+							<img src="img/nintendo/yes.png"/>
 						</div>
 						<div class="form-group bmd-form-group">
 							<label for="inputNintendoPrice" class="bmd-label-floating">Nintendo price: </label>
@@ -126,7 +128,6 @@
 							<input type="number" step="1" min="0" max="100" class="form-control" id="inputNintendoSale">
 						</div>
 					</div>
-
 				</div>
 				<div class="modal-footer">
 				  <button class="btn btn-secondary" type="button" data-dismiss="modal">CANCEL</button>
@@ -137,6 +138,21 @@
 		  </div>
 	</section>
 	<section id="templates">
+		<template id="templateGame">
+			<div class="game">
+				<img class="game-image" src="https://raw.githubusercontent.com/cooper-csse/AndroidSaleWaypoint/master/app/src/main/res/drawable/banner_terraria.jpeg">
+				<div class="game-banner">
+					<img class="game-store-steam" src="img/steam/yes.png">
+					<img class="game-store-xbox" src="img/xbox/no.png">
+					<img class="game-store-playstation" src="img/playstation/no.png">
+					<img class="game-store-itch" src="img/itch/sale.png">
+					<img class="game-store-nintendo" src="img/nintendo/yes.png">
+					<div class="game-favorite">
+						<img class="game-store-nintendo" src="img/favorite_yes.png">
+					</div>
+				</div>
+			</div>
+		</template>
 	</section>
 	<script src="lib/scripts/jquery.min.js"></script>
 	<script src="lib/scripts/popper.js"></script>

@@ -1,0 +1,44 @@
+:root {
+	--gameWidth: 400px;
+	--gameBannerSize: 0.075;
+}
+
+.game {
+	width: var(--gameWidth);
+	position: relative;
+	cursor: pointer;
+	transition: box-shadow 250ms;
+}
+
+.game:hover {
+	box-shadow: 0 0 16px black;
+}
+
+.game:active {
+	box-shadow: 0 0 8px black;
+}
+
+.game-image {
+	width: var(--gameWidth);
+}
+
+.game-banner {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	bottom: 0;
+	height: calc(var(--gameBannerSize) * var(--gameWidth));
+	background-color: var(--colorGameBanner);
+}
+
+.game-banner img {
+	display: block;
+	padding: 2px;
+	width: calc(var(--gameBannerSize) * var(--gameWidth));
+	height: calc(var(--gameBannerSize) * var(--gameWidth));
+}
+
+.game-favorite {
+	margin-left: auto;
+}
+
