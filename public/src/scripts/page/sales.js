@@ -17,11 +17,14 @@ export default class PageSales extends Page {
 
 	main() {
 		console.log("test");
-		let x = new ListManager();
-		x.startListeners(() => {
+		let lm = new ListManager();
+		lm.startListeners(() => {
+			this.views.games.empty();
 			ListManager.instance.snapshots.forEach(item => {
 				const game = Conversions.gameFromSnapshot(item);
-				this.views.games.append(PageSales.createGameView(game));
+				for (let i = 0; i < 1; i++) {
+					this.views.games.append(PageSales.createGameView(game));
+				}
 			});
 		});
 	}
@@ -34,7 +37,7 @@ export default class PageSales extends Page {
 	static createGameView(game) {
 		let template = $("#templateGame").contents();
 		let clone = template.clone(true, true);
-		clone.find(".game-img").attr("src", "");
+		clone.find(".game-image").attr("src", game.image);
 		return clone;
 	}
 }
