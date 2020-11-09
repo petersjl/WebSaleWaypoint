@@ -1,5 +1,6 @@
 import Constants from "./util/constants.js";
 import Conversions from "./util/conversions.js";
+import Game from "./model/game.js";
 
 export default class ListManager {
 	/**
@@ -59,6 +60,23 @@ export default class ListManager {
 	 */
 	static get length() {
 		return ListManager.instance.snapshots.length;
+	}
+
+	/**
+	 * Adds a new game to the database
+	 * @param {string} title
+	 * @param {string} developer
+	 * @param {string} description
+	 * @param {string} image
+	 * @param {Map<StoreType, Listing>} stores
+	 */
+	static add(title, developer, description, image, stores) {
+		ListManager.instance.ref.add({
+			[Constants.fb.field.TITLE]: title,
+			[Constants.fb.field.DEVELOPER]: developer,
+			[Constants.fb.field.DESCRIPTION]: description,
+			[Constants.fb.field.IMAGE]: image
+		});
 	}
 
 	/**

@@ -1,7 +1,7 @@
+import Conversions from "../util/conversions.js";
 import Game from "../model/game.js";
 import ListManager from "../listManager.js";
 import Page from "./page.js";
-import Conversions from "../util/conversions.js";
 
 export default class PageSales extends Page {
 	/**
@@ -11,7 +11,20 @@ export default class PageSales extends Page {
 
 	init() {
 		this.views = {
-			games: $("#games")
+			games: $("#games"),
+			addDialog: {
+				modal: $("#dialogGameAdd"),
+				submit: $("#submitGameAdd"),
+				title: $("#inputTitle"),
+				developer: $("#inputDev"),
+				description: $("#inputAbout"),
+				image: $("#inputImage"),
+				steam: {price: $("#inputSteamPrice"), sale: $("#inputSteamSale")},
+				xbox: {price: $("#inputXboxPrice"), sale: $("#inputXboxSale")},
+				playstation: {price: $("#inputPlaystationPrice"), sale: $("#inputPlaystationSale")},
+				itch: {price: $("#inputItchPrice"), sale: $("#inputItchSale")},
+				nintendo: {price: $("#inputNintendoPrice"), sale: $("#inputNintendoSale")}
+			}
 		};
 	}
 
@@ -26,6 +39,15 @@ export default class PageSales extends Page {
 					this.views.games.append(PageSales.createGameView(game));
 				}
 			});
+		});
+
+		this.views.addDialog.submit.on("click", () => {
+			ListManager.add(
+				this.views.addDialog.title.val(),
+				this.views.addDialog.developer.val(),
+				this.views.addDialog.description.val(),
+				this.views.addDialog.image.val()
+			);
 		});
 	}
 
