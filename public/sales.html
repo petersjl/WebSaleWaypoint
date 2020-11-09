@@ -57,32 +57,76 @@
 						<span class="bmd-help">Who developed the game</span>
 					</div>
 
-					<div class="form-group bmd-form-group">
-						<label for="inputSteamPrice" class="bmd-label-floating">Steam price: </label>
-						<input type="text" class="form-control" id="inputSteamPrice">
-					</div>
-					<div class="form-group bmd-form-group">
-						<label for="inputSteamSale" class="bmd-label-floating">Steam sale: </label>
-						<input type="text" class="form-control" id="inputSteamSale">
-					</div>
-
-					<div class="form-group bmd-form-group">
-						<label for="inputXboxPrice" class="bmd-label-floating">Xbox price: </label>
-						<input type="text" class="form-control" id="inputXboxPrice">
-					</div>
-					<div class="form-group bmd-form-group">
-						<label for="inputXboxSale" class="bmd-label-floating">Xbox sale: </label>
-						<input type="text" class="form-control" id="inputXboxSale">
+					<div class="store-group">
+						<div class="store-icon">
+							<img src="img/steam.png"/>
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputSteamPrice" class="bmd-label-floating">Steam price: </label>
+							<input type="number" step="0.01" min="0" class="form-control" id="inputSteamPrice">
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputSteamSale" class="bmd-label-floating">Steam sale: </label>
+							<input type="number" step="1" min="0" max="100" class="form-control" id="inputSteamSale">
+						</div>
 					</div>
 
-					<div class="form-group bmd-form-group">
-						<label for="inputPlaystationPrice" class="bmd-label-floating">Playstation price: </label>
-						<input type="text" class="form-control" id="inputPlaystationPrice">
+					<div class="store-group">
+						<div class="store-icon">
+							<img src="img/xbox.png"/>
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputXboxPrice" class="bmd-label-floating">Xbox price: </label>
+							<input type="number" step="0.01" min="0" class="form-control" id="inputXboxPrice">
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputXboxSale" class="bmd-label-floating">Xbox sale: </label>
+							<input type="number" step="1" min="0" max="100" class="form-control" id="inputXboxSale">
+						</div>
 					</div>
-					<div class="form-group bmd-form-group">
-						<label for="inputPlaystationSale" class="bmd-label-floating">Playstation sale: </label>
-						<input type="text" class="form-control" id="inputPlaystationSale">
+
+					<div class="store-group">
+						<div class="store-icon">
+							<img src="img/playstation.png"/>
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputPlaystationPrice" class="bmd-label-floating">Playstation price: </label>
+							<input type="number" step="0.01" min="0" class="form-control" id="inputPlaystationPrice">
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputPlaystationSale" class="bmd-label-floating">Playstation sale: </label>
+							<input type="number" step="1" min="0" max="100" class="form-control" id="inputPlaystationSale">
+						</div>
 					</div>
+
+					<div class="store-group">
+						<div class="store-icon">
+							<img src="img/itch.png"/>
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputItchPrice" class="bmd-label-floating">Itch price: </label>
+							<input type="number" step="0.01" min="0" class="form-control" id="inputItchPrice">
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputItchSale" class="bmd-label-floating">Itch sale: </label>
+							<input type="number" step="1" min="0" max="100" class="form-control" id="inputItchSale">
+						</div>
+					</div>
+
+					<div class="store-group">
+						<div class="store-icon">
+							<img src="img/nintendo.png"/>
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputNintendoPrice" class="bmd-label-floating">Nintendo price: </label>
+							<input type="number" step="0.01" min="0" class="form-control" id="inputNintendoPrice">
+						</div>
+						<div class="form-group bmd-form-group">
+							<label for="inputNintendoSale" class="bmd-label-floating">Nintendo sale: </label>
+							<input type="number" step="1" min="0" max="100" class="form-control" id="inputNintendoSale">
+						</div>
+					</div>
+
 				</div>
 				<div class="modal-footer">
 				  <button class="btn btn-secondary" type="button" data-dismiss="modal">CANCEL</button>
