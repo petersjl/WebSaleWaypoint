@@ -12,6 +12,11 @@
 	transition: box-shadow 250ms, opacity 250ms, transform 150ms;
 }
 
+.game * {
+	pointer-events: none;
+	user-select: none;
+}
+
 .game:hover {
 	box-shadow: 0 0 32px black;
 	opacity: 0.9;
