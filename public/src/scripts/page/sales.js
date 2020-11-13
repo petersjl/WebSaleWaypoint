@@ -175,14 +175,10 @@ export default class PageSales extends Page {
 	setInputsAsRequired(value=true) {
 		this.views.addDialog.title.prop("required", value);
 		this.views.addDialog.developer.prop("required", value);
-		this.views.addDialog.description.prop("required", value);
-		this.views.addDialog.image.prop("required", value);
 
 		if (!value) return;
 		if (!this.views.addDialog.title.val()) this.views.addDialog.title.focus();
 		else if (!this.views.addDialog.developer.val()) this.views.addDialog.developer.focus();
-		else if (!this.views.addDialog.description.val()) this.views.addDialog.description.focus();
-		else if (!this.views.addDialog.image.val()) this.views.addDialog.image.focus();
 	}
 
 	/**

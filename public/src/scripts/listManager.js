@@ -81,7 +81,7 @@ export default class ListManager {
 	 * @returns {boolean}
 	 */
 	static add(title, developer, description, image, stores) {
-		if (!title || !developer || !description || !image) return false;
+		if (!title || !developer) return false;
 		ListManager.instance.ref.add({
 			[Constants.fb.field.TITLE]: title,
 			[Constants.fb.field.DEVELOPER]: developer,
@@ -98,16 +98,13 @@ export default class ListManager {
 	 * @param {string} description
 	 * @param {string} image
 	 * @param {Map<StoreType, Listing>} stores
-	 * @returns {boolean}
 	 */
 	static update(id, description, image, stores) {
-		if (!description || !image) return false;
 		ListManager.instance.ref.doc(id).set({
 			[Constants.fb.field.DESCRIPTION]: description,
 			[Constants.fb.field.IMAGE]: image,
 			[Constants.fb.field.STORES]: stores
 		}, {merge: true});
-		return true;
 	}
 
 	static wishlistGame(gameId, wishlisted)	{
