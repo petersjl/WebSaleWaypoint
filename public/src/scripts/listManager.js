@@ -11,12 +11,19 @@ export default class ListManager {
 	 */
 	static instance;
 
+
 	/**
 	 * Reference to the Collection of Games in Firestore
 	 * @type firebase.firestore.CollectionReference
 	 * @private
 	 */
 	ref;
+	/**
+	 * Reference to the queried Collection of Games in Firestore
+	 * @type firebase.firestore.CollectionReference
+	 * @private
+	 */
+	queriedRef;
 	/**
 	 * Reference to the CollectionSnapshot of Games in Firebase
 	 * @type Array<firebase.firestore.DocumentSnapshot>
@@ -32,7 +39,8 @@ export default class ListManager {
 
 	constructor(page) {
 		if (ListManager.instance) return;
-		this.ref = page.getReference(firebase.firestore().collection(Constants.fb.collection.GAMES));
+		this.ref = firebase.firestore().collection(Constants.fb.collection.GAMES);
+		this.queriedRef = page.getReference(this.ref);
 		ListManager.instance = this;
 	}
 
@@ -41,7 +49,7 @@ export default class ListManager {
 	 * @param {CallableFunction} callback
 	 */
 	startListeners(callback) {
-		this.unsubscribe = this.ref.onSnapshot(snapshot => {
+		this.unsubscribe = this.queriedRef.onSnapshot(snapshot => {
 			this.snapshots = snapshot.docs;
 			if (callback) callback();
 		});
