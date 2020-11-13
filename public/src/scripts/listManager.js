@@ -1,3 +1,4 @@
+import AuthManager from "./authManager.js";
 import Constants from "./util/constants.js";
 import Conversions from "./util/conversions.js";
 import Game from "./model/game.js";
@@ -99,6 +100,20 @@ export default class ListManager {
 			[Constants.fb.field.STORES]: stores
 		}, {merge: true});
 		return true;
+	}
+
+	static wishlistGame(gameId, wishlisted)	{
+		let game = this.instance.ref.doc(gameId);
+		console.log(game);
+		game.get().then(snapshot => {
+			let wishlist = snapshot.get(Constants.fb.field.WISHLIST) || [];
+			if (wishlisted) {
+				wishlist.splice(wishlist.indexOf(AuthManager.uid, 1));
+			} else {
+				wishlist.push(AuthManager.uid);
+			}
+			game.set({wishlist: wishlist}, {merge: true});
+		});
 	}
 
 	/**
