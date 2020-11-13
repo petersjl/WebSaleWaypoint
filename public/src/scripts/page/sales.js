@@ -147,6 +147,8 @@ export default class PageSales extends Page {
 				stores
 			);
 		});
+
+		this.views.detailDialog.wishlist.on("click", () => console.log("TODO: add to wishlist"));
 	}
 
 	/**
@@ -208,11 +210,6 @@ export default class PageSales extends Page {
 		detail.nintendo.price.val(nintendo.price ? nintendo.price : "");
 		detail.nintendo.sale.val(nintendo.sale ? nintendo.sale : "");
 		detail.nintendo.image.attr("src", `img/nintendo/${nintendo.getIcon()}.png`);
-
-		detail.wishlist.on("click", () => {
-			ref
-		});
-
 		this.views.detailDialog.modal.modal("show");
 		
 	}
@@ -243,7 +240,7 @@ export default class PageSales extends Page {
 		clone.find(".game-store-itch").attr("src", `img/itch/${game.stores.get(Store.ITCH).getIcon()}.png`);
 		clone.find(".game-store-nintendo").attr("src", `img/nintendo/${game.stores.get(Store.NINTENDO).getIcon()}.png`);
 		clone.find(".game-favorite-icon").attr("src", `img/favorite_${game.wishlisted ? "yes" : "no"}.png`)
-		clone.on("click", this.populateDetailView.bind(this, game));
+		clone.find(".game").on("click", this.populateDetailView.bind(this, game));
 		return clone;
 	}
 }
