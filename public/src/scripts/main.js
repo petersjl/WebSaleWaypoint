@@ -5,7 +5,6 @@
 
 import AuthManager from "./authManager.js";
 import Page from "./page/page.js";
-import PageAbout from "./page/about.js";
 import PageGames from "./page/games.js";
 import PageLogin from "./page/login.js";
 import PageSales from "./page/sales.js";
@@ -32,7 +31,6 @@ function initializePage() {
 	if (document.querySelector("#pageGames")) page = new PageGames();
 	if (document.querySelector("#pageSales")) page = new PageSales();
 	if (document.querySelector("#pageWishlist")) page = new PageWishlist();
-	if (document.querySelector("#pageAbout")) page = new PageAbout();
 	if (document.querySelector("#pageStores")) page = new PageStores();
 
 	if (page) {
