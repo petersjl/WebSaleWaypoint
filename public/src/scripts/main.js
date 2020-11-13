@@ -8,6 +8,7 @@ import Page from "./page/page.js";
 import PageAbout from "./page/about.js";
 import PageLogin from "./page/login.js";
 import PageSales from "./page/sales.js";
+import PageStores from "./page/stores.js";
 import PageWishlist from "./page/wishlist.js";
 
 /**
@@ -30,6 +31,7 @@ function initializePage() {
 	if (document.querySelector("#pageSales")) page = new PageSales();
 	if (document.querySelector("#pageWishlist")) page = new PageWishlist();
 	if (document.querySelector("#pageAbout")) page = new PageAbout();
+	if (document.querySelector("#pageStores")) page = new PageStores();
 
 	if (page) {
 		Page.instance = page;

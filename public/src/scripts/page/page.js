@@ -55,6 +55,10 @@ export default class Page {
 	 */
 	main() {}
 
+	/**
+	 * Override to provide a query on top of the collection reference
+	 * @param {firebase.firestore.CollectionReference} ref
+	 */
 	getReference(ref) {
 		return ref;
 	}
