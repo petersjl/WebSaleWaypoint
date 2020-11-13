@@ -147,6 +147,8 @@ export default class PageSales extends Page {
 				stores
 			);
 		});
+
+		this.views.detailDialog.wishlist.on("click", () => console.log("TODO: add to wishlist"));
 	}
 
 	/**
@@ -208,8 +210,6 @@ export default class PageSales extends Page {
 		detail.nintendo.price.val(nintendo.price ? nintendo.price : "");
 		detail.nintendo.sale.val(nintendo.sale ? nintendo.sale : "");
 		detail.nintendo.image.attr("src", `img/nintendo/${nintendo.getIcon()}.png`);
-
-		detail.wishlist.on("click", () => console.log("TODO: add to wishlist"));
 
 		this.views.detailDialog.modal.modal("show");
 		
