@@ -13,9 +13,6 @@ export default class Conversions {
 	static gameFromSnapshot(snapshot) {
 		let wishlist = snapshot.get(Constants.fb.field.WISHLIST);
 		let wishlisted = wishlist ? wishlist.includes(AuthManager.uid) : false;
-		if (snapshot.get(Constants.fb.field.TITLE) == "Starbound") {
-			console.log(wishlisted);
-		}
 		const game = new Game(
 			snapshot.get(Constants.fb.field.TITLE),
 			snapshot.get(Constants.fb.field.DEVELOPER),
