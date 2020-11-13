@@ -25,16 +25,6 @@
 	transition: transform 150ms;
 }
 
-#fab2 {
-    position: fixed;
-    right: 80px;
-    bottom: 10px;
-    background: var(--colorSale);
-    color: var(--colorTextPrimary);
-    z-index: 100;
-	transition: transform 150ms;
-}
-
 #fab:hover { transform: translateY(-2px); }
 #fab:active { transform: translateY(1px); }
 
