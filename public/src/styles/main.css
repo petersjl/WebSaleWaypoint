@@ -45,22 +45,20 @@
 	color: var(--colorSale);
 }
 
-#dialogDetail p, #dialogDetail .btn.btn-primary.collapse-button {
+#dialogDetail p {
+	font-size: 1.2em;
+	line-height: 200%;
 	margin-bottom: 0;
 }
 
 .btn.btn-primary.collapse-button {
 	color: var(--colorTextPrimary);
 	padding: 0px .75rem;
-	height: 1.5rem;
+	font-size: 1.2em;
 }
 
 .collapse-group {
 	display: flex;
-}
-
-.form-group.bmd-form-group.collapse-input {
-	/* padding-top: 0px; */
 }
 
 #content {
