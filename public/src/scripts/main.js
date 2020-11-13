@@ -6,6 +6,7 @@
 import AuthManager from "./authManager.js";
 import Page from "./page/page.js";
 import PageAbout from "./page/about.js";
+import PageGames from "./page/games.js";
 import PageLogin from "./page/login.js";
 import PageSales from "./page/sales.js";
 import PageStores from "./page/stores.js";
@@ -19,7 +20,7 @@ let page;
 
 function checkForRedirects() {
 	if (document.querySelector("#pageLogin") && AuthManager.isSignedIn) {
-		window.location.href = "./sales.html";
+		window.location.href = "./games.html";
 	}
 	if (!document.querySelector("#pageLogin") && !AuthManager.isSignedIn) {
 		window.location.href = "/";
@@ -28,6 +29,7 @@ function checkForRedirects() {
 
 function initializePage() {
 	if (document.querySelector("#pageLogin")) page = new PageLogin();
+	if (document.querySelector("#pageGames")) page = new PageGames();
 	if (document.querySelector("#pageSales")) page = new PageSales();
 	if (document.querySelector("#pageWishlist")) page = new PageWishlist();
 	if (document.querySelector("#pageAbout")) page = new PageAbout();

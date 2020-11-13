@@ -21,6 +21,7 @@ export default class Page {
 	constructor() {
 		this.urlParams = new URLSearchParams(window.location.search);
 
+		$("#linkGames").on("click", this.redirect.bind(this, "./games.html"));
 		$("#linkSales").on("click", this.redirect.bind(this, "./sales.html"));
 		$("#linkWishlist").on("click", this.redirect.bind(this, "./wishlist.html"));
 		$("#linkAbout").on("click", this.redirect.bind(this, "./about.html"));

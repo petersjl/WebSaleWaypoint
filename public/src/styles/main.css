@@ -80,16 +80,16 @@
 	bottom: -4px;
 }
 
+#icon.icon-games {
+	color: var(--colorTextLink);
+}
+
 #icon.icon-sales {
 	color: var(--colorSale);
 }
 
 #icon.icon-wishlist {
 	color: var(--colorWishlist);
-}
-
-#icon.icon-about {
-	color: var(--colorTextLink);
 }
 
 #icon.icon-stores {
