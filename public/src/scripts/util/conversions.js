@@ -1,3 +1,4 @@
+import AuthManager from "../authManager.js";
 import Constants from "./constants.js";
 import Game from "../model/game.js";
 import Listing from "../model/listing.js";
