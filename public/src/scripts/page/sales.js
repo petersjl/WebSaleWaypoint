@@ -240,7 +240,7 @@ export default class PageSales extends Page {
 		clone.find(".game-store-playstation").attr("src", `img/playstation/${game.stores.get(Store.PLAYSTATION).getIcon()}.png`);
 		clone.find(".game-store-itch").attr("src", `img/itch/${game.stores.get(Store.ITCH).getIcon()}.png`);
 		clone.find(".game-store-nintendo").attr("src", `img/nintendo/${game.stores.get(Store.NINTENDO).getIcon()}.png`);
-		clone.on("click", this.populateDetailView.bind(this, game));
+		clone.find(".game").on("click", this.populateDetailView.bind(this, game));
 		return clone;
 	}
 }
