@@ -67,6 +67,10 @@
 	opacity: 0;
 }
 
+#games {
+	opacity: 0;
+}
+
 .btn-sale {
 	color: var(--colorSale) !important;
 }

@@ -55,6 +55,7 @@ export default class PageSales extends Page {
 
 	main() {
 		let lm = new ListManager(this);
+		let fadedIn = false;
 		lm.startListeners(() => {
 			this.views.games.empty();
 			ListManager.instance.snapshots.forEach(item => {
@@ -63,6 +64,10 @@ export default class PageSales extends Page {
 					this.views.games.append(this.createGameView(game));
 				}
 			});
+			if (!fadedIn) {
+				this.views.games.animate({opacity: 1}, Page.fade);
+				fadedIn = true;
+			}
 		});
 
 		this.views.detailDialog.submit.on("click", () => {
