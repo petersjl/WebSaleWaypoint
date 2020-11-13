@@ -22,6 +22,12 @@ body {
 	color: #eeeeee40;
 }
 
+@media (max-width: 400px) {
+	.bmd-form-group .checkbox label, .bmd-form-group .radio label, .bmd-form-group label {
+		font-size: 0.8em;
+	}
+}
+
 .custom-file-control, .form-control {
 	color: var(--colorTextSecondary) !important;
 }
