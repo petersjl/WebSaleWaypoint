@@ -12,6 +12,17 @@ body {
 	color: var(--colorTextPrimary);
 }
 
+/* Dropdown */
+.dropdown-menu {
+	background-color: var(--colorBackground);
+}
+
+.dropdown-item {
+	color: var(--colorTextPrimary);
+	transition: color 150ms, background-color 150ms;
+}
+.dropdown-item:hover { background-color: var(--colorSale); }
+
 /* Modal */
 .modal-content {
 	background-color: var(--colorBackground);

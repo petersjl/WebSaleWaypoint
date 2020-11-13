@@ -88,6 +88,10 @@
 	color: var(--colorTextLink);
 }
 
+#icon.icon-stores {
+	color: var(--colorTextSecondary);
+}
+
 .modal-body {
 	height: calc(100vh - 300px);
 	min-height: 150px;
