@@ -84,6 +84,24 @@ export default class ListManager {
 	}
 
 	/**
+	 * Update a game in the database
+	 * @param {string} id
+	 * @param {string} description
+	 * @param {string} image
+	 * @param {Map<StoreType, Listing>} stores
+	 * @returns {boolean}
+	 */
+	static update(id, description, image, stores) {
+		if (!description || !image) return false;
+		ListManager.instance.ref.doc(id).set({
+			[Constants.fb.field.DESCRIPTION]: description,
+			[Constants.fb.field.IMAGE]: image,
+			[Constants.fb.field.STORES]: stores
+		}, {merge: true});
+		return true;
+	}
+
+	/**
 	 * Get a reference to the Game at a specific index
 	 * @param {number} index
 	 * @returns {Game}

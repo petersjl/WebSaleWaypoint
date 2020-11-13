@@ -10,6 +10,10 @@ export default class PageSales extends Page {
 	 * @type {{games: HTMLElement}}
 	 */
 	views;
+	/**
+	 * @type {string}
+	 */
+	gameID;
 
 	init() {
 		this.views = {
@@ -109,6 +113,40 @@ export default class PageSales extends Page {
 			if (success) this.views.addDialog.modal.modal("hide");
 			else this.setInputsAsRequired(true);
 		});
+
+		this.views.detailDialog.submit.on("click", () => {
+			if (!this.gameID) return;
+
+			let stores = {
+				itch: Listing.toObject(new Listing(
+					this.views.detailDialog.itch.price.val(),
+					this.views.detailDialog.itch.sale.val()
+				)),
+				nintendo: Listing.toObject(new Listing(
+					this.views.detailDialog.nintendo.price.val(),
+					this.views.detailDialog.nintendo.sale.val()
+				)),
+				playstation: Listing.toObject(new Listing(
+					this.views.detailDialog.playstation.price.val(),
+					this.views.detailDialog.playstation.sale.val()
+				)),
+				steam: Listing.toObject(new Listing(
+					this.views.detailDialog.steam.price.val(),
+					this.views.detailDialog.steam.sale.val()
+				)),
+				xbox: Listing.toObject(new Listing(
+					this.views.detailDialog.xbox.price.val(),
+					this.views.detailDialog.xbox.sale.val()
+				))
+			};
+
+			let success = ListManager.update(
+				this.gameID,
+				this.views.detailDialog.description.val(),
+				this.views.detailDialog.image.val(),
+				stores
+			);
+		});
 	}
 
 	/**
@@ -133,6 +171,8 @@ export default class PageSales extends Page {
 	 * @param {Game} game 
 	 */
 	populateDetailView(game) {
+		this.gameID = game.id;
+
 		let detail = this.views.detailDialog;
 		detail.title.html(game.title);
 		detail.developer.html(game.developer);
