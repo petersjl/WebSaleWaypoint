@@ -1,4 +1,5 @@
 import AuthManager from "../authManager.js";
+import Constants from "../util/constants.js";
 
 /**
  * Abstract Page class
@@ -56,10 +57,18 @@ export default class Page {
 	main() {}
 
 	/**
+	 * Override to provide an order to the collection reference
+	 * @param {firebase.firestore.CollectionReference} ref
+	 */
+	orderCollection(ref) {
+		return ref.orderBy(Constants.fb.field.TITLE);
+	}
+
+	/**
 	 * Override to provide a query on top of the collection reference
 	 * @param {firebase.firestore.CollectionReference} ref
 	 */
-	getReference(ref) {
+	filterCollection(ref) {
 		return ref;
 	}
 }
