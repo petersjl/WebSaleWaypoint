@@ -1,3 +1,4 @@
+import AuthManager form "../authManager.js";
 import PageSales from "./sales.js";
 
 export default class PageWishlist extends PageSales {
