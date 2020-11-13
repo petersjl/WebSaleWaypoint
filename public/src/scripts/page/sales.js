@@ -163,9 +163,9 @@ export default class PageSales extends Page {
 
 	wishlistGame() {
 		console.log("Wishlisting game with id: " + this.gameID);
-		ListManager.wishlistGame(this.gameID, this.wishlisted);
-		this.wishlisted = !this.wishlisted
-		this.views.detailDialog.wishlist.attr("src", `img/favorite_${this.wishlisted ? "yes" : "no"}.png`)
+		ListManager.wishlistGame(this.gameID, this.detailWishlisted);
+		this.detailWishlisted = !this.detailWishlisted
+		this.views.detailDialog.wishlist.attr("src", `img/favorite_${this.detailWishlisted ? "yes" : "no"}.png`)
 	}
 
 	/**
