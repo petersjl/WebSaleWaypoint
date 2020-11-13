@@ -4,7 +4,6 @@ import ListManager from "../listManager.js";
 import Listing from "../model/listing.js";
 import Page from "./page.js";
 import Store from "../model/store.js";
-import AuthManager from "../authManager.js";
 
 export default class PageSales extends Page {
 	/**
@@ -150,7 +149,7 @@ export default class PageSales extends Page {
 				))
 			};
 
-			let success = ListManager.update(
+			ListManager.update(
 				this.gameID,
 				this.views.detailDialog.description.val(),
 				this.views.detailDialog.image.val(),
@@ -164,8 +163,8 @@ export default class PageSales extends Page {
 	wishlistGame() {
 		console.log("Wishlisting game with id: " + this.gameID);
 		ListManager.wishlistGame(this.gameID, this.detailWishlisted);
-		this.detailWishlisted = !this.detailWishlisted
-		this.views.detailDialog.wishlist.attr("src", `img/favorite_${this.detailWishlisted ? "yes" : "no"}.png`)
+		this.detailWishlisted = !this.detailWishlisted;
+		this.views.detailDialog.wishlist.attr("src", `img/favorite_${this.detailWishlisted ? "yes" : "no"}.png`);
 	}
 
 	/**
@@ -194,7 +193,7 @@ export default class PageSales extends Page {
 		detail.developer.html(game.developer);
 		detail.description.val(game.description);
 		detail.image.val(game.image);
-		detail.wishlist.attr("src", `img/favorite_${game.wishlisted ? "yes" : "no"}.png`)
+		detail.wishlist.attr("src", `img/favorite_${game.wishlisted ? "yes" : "no"}.png`);
 
 		//steam
 		let steam = game.stores.get(Store.STEAM);
@@ -230,16 +229,6 @@ export default class PageSales extends Page {
 	}
 
 	/**
-	 * Sets the given image to the correct source
-	 * @param {*} image 
-	 * @param {number} price
-	 * @param {number} sale
-	 */
-	updateStoreImage(image, price, sale) {
-		
-	}
-
-	/**
 	 * Create a new Game view
 	 * @param {Game} game
 	 * @return {HTMLElement}
@@ -254,7 +243,7 @@ export default class PageSales extends Page {
 		clone.find(".game-store-playstation").attr("src", `img/playstation/${game.stores.get(Store.PLAYSTATION).getIcon()}.png`);
 		clone.find(".game-store-itch").attr("src", `img/itch/${game.stores.get(Store.ITCH).getIcon()}.png`);
 		clone.find(".game-store-nintendo").attr("src", `img/nintendo/${game.stores.get(Store.NINTENDO).getIcon()}.png`);
-		clone.find(".game-favorite-icon").attr("src", `img/favorite_${game.wishlisted ? "yes" : "no"}.png`)
+		clone.find(".game-favorite-icon").attr("src", `img/favorite_${game.wishlisted ? "yes" : "no"}.png`);
 		clone.find(".game").on("click", this.populateDetailView.bind(this, game));
 		return clone;
 	}
