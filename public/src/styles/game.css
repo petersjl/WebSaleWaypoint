@@ -9,6 +9,7 @@
 	box-shadow: 0 0 12px black;
 	position: relative;
 	cursor: pointer;
+	--colorTitle: var(--colorForeground);
 	transition: box-shadow 250ms, opacity 250ms, transform 150ms;
 }
 
@@ -20,6 +21,7 @@
 .game:hover {
 	box-shadow: 0 0 32px black;
 	opacity: 0.9;
+	--colorTitle: var(--colorSale);
 	transform: translateY(-2px) scale(1.02);
 }
 
@@ -31,6 +33,15 @@
 
 .game-image {
 	width: 100%;
+}
+
+.game-title {
+	background-color: var(--colorTitle);
+	padding: 5px 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: background-color 250ms;
 }
 
 .game-banner {

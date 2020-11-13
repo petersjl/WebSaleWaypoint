@@ -45,7 +45,6 @@ export default class PageSales extends Page {
 	}
 
 	main() {
-		console.log("test");
 		let lm = new ListManager();
 		lm.startListeners(() => {
 			this.views.games.empty();
@@ -194,6 +193,7 @@ export default class PageSales extends Page {
 	createGameView(game) {
 		let template = $("#templateGame").contents();
 		let clone = template.clone(true, true);
+		clone.find(".game-title").html(game.title);
 		clone.find(".game-image").attr("src", game.image);
 		clone.find(".game-store-steam").attr("src", `img/steam/${game.stores.get(Store.STEAM).getIcon()}.png`);
 		clone.find(".game-store-xbox").attr("src", `img/xbox/${game.stores.get(Store.XBOX).getIcon()}.png`);
