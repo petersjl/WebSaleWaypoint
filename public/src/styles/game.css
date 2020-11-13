@@ -34,10 +34,10 @@
 }
 
 .game-banner {
-	position: absolute;
+	/* position: absolute; */
 	display: flex;
 	width: 100%;
-	bottom: 0;
+	/* bottom: 0; */
 	height: calc(var(--gameBannerHeight) * var(--gameBannerMultiplier));
 	background-color: var(--colorGameBanner);
 }
