@@ -54,7 +54,7 @@ export default class PageSales extends Page {
 	}
 
 	main() {
-		let lm = new ListManager();
+		let lm = new ListManager(this);
 		lm.startListeners(() => {
 			this.views.games.empty();
 			ListManager.instance.snapshots.forEach(item => {

@@ -30,9 +30,9 @@ export default class ListManager {
 	 */
 	unsubscribe;
 
-	constructor() {
+	constructor(page) {
 		if (ListManager.instance) return;
-		this.ref = firebase.firestore().collection(Constants.fb.collection.GAMES);
+		this.ref = page.getReference(firebase.firestore().collection(Constants.fb.collection.GAMES));
 		ListManager.instance = this;
 	}
 

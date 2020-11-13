@@ -54,4 +54,8 @@ export default class Page {
 	 * @abstract
 	 */
 	main() {}
+
+	getReference(ref) {
+		return ref;
+	}
 }
