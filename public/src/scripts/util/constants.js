@@ -36,6 +36,7 @@ export default class Constants {
 			}
 			static listing = class {
 				static LISTED = "listed";
+				static ONSALE = "onSale";
 				static PRICE = "price";
 				static SALE = "sale";
 			}

@@ -69,14 +69,18 @@ export default class ListManager {
 	 * @param {string} description
 	 * @param {string} image
 	 * @param {Map<StoreType, Listing>} stores
+	 * @returns {boolean}
 	 */
 	static add(title, developer, description, image, stores) {
+		if (!title || !developer || !description || !image) return false;
 		ListManager.instance.ref.add({
 			[Constants.fb.field.TITLE]: title,
 			[Constants.fb.field.DEVELOPER]: developer,
 			[Constants.fb.field.DESCRIPTION]: description,
-			[Constants.fb.field.IMAGE]: image
+			[Constants.fb.field.IMAGE]: image,
+			[Constants.fb.field.STORES]: stores
 		});
+		return true;
 	}
 
 	/**
