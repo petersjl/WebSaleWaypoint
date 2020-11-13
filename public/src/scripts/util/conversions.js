@@ -2,6 +2,7 @@ import Constants from "./constants.js";
 import Game from "../model/game.js";
 import Listing from "../model/listing.js";
 import Store from "../model/store.js";
+import AuthManager from "../authManager.js";
 
 export default class Conversions {
 	/**
@@ -10,11 +11,17 @@ export default class Conversions {
 	 * @returns Game
 	 */
 	static gameFromSnapshot(snapshot) {
+		let wishlist = snapshot.get(Constants.fb.field.WISHLIST);
+		let wishlisted = wishlist ? wishlist.includes(AuthManager.uid) : false;
+		if (snapshot.get(Constants.fb.field.TITLE) == "Starbound") {
+			console.log(wishlisted);
+		}
 		const game = new Game(
 			snapshot.get(Constants.fb.field.TITLE),
 			snapshot.get(Constants.fb.field.DEVELOPER),
 			snapshot.get(Constants.fb.field.DESCRIPTION),
-			snapshot.get(Constants.fb.field.IMAGE)
+			snapshot.get(Constants.fb.field.IMAGE),
+			wishlisted
 		);
 		const stores = snapshot.get(Constants.fb.field.STORES);
 		game.stores.set(Store.ITCH, Listing.fromObject(stores.itch));

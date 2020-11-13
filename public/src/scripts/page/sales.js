@@ -169,7 +169,9 @@ export default class PageSales extends Page {
 		detail.nintendo.sale.val(nintendo.sale ? nintendo.sale : "");
 		detail.nintendo.image.attr("src", `img/nintendo/${nintendo.getIcon()}.png`)
 
-		detail.wishlist.on("click", () => console.log("TODO: add to wishlist"));
+		detail.wishlist.on("click", () => {
+			ref
+		});
 
 		this.views.detailDialog.modal.modal("show")
 		
@@ -200,6 +202,8 @@ export default class PageSales extends Page {
 		clone.find(".game-store-playstation").attr("src", `img/playstation/${game.stores.get(Store.PLAYSTATION).getIcon()}.png`);
 		clone.find(".game-store-itch").attr("src", `img/itch/${game.stores.get(Store.ITCH).getIcon()}.png`);
 		clone.find(".game-store-nintendo").attr("src", `img/nintendo/${game.stores.get(Store.NINTENDO).getIcon()}.png`);
+		console.log(game.title + " " + game.wishlisted);
+		clone.find(".game-favorite-icon").attr("src", `img/favorite_${game.wishlisted ? "yes" : "no"}.png`)
 		clone.on("click", () => {
 			this.populateDetailView(game)
 		}

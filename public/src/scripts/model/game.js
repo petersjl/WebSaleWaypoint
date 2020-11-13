@@ -27,16 +27,22 @@ export default class Game {
 	 */
 	image;
 	/**
+	 * Is the game wishlisted by the current user
+	 * @type {boolean}
+	 */
+	wishlisted;
+	/**
 	 * Store pricing information
 	 * @type {Map<StoreType, Listing>}
 	 */
 	stores;
 
-	constructor(title="", developer="", description="", image="") {
+	constructor(title="", developer="", description="", image="", wishlisted=false) {
 		this.title = title;
 		this.developer = developer;
 		this.description = description;
 		this.image = image;
+		this.wishlisted = wishlisted;
 		this.stores = new Map();
 	}
 }
