@@ -82,12 +82,17 @@ export default class ListManager {
 	 */
 	static add(title, developer, description, image, stores) {
 		if (!title || !developer) return false;
+		let onSale = stores.steam.onSale
+			|| stores.xbox.onSale || stores.playstation.onSale
+			|| stores.nintendo.onSale || stores.itch.onSale;
+
 		ListManager.instance.ref.add({
 			[Constants.fb.field.TITLE]: title,
 			[Constants.fb.field.DEVELOPER]: developer,
 			[Constants.fb.field.DESCRIPTION]: description,
 			[Constants.fb.field.IMAGE]: image,
-			[Constants.fb.field.STORES]: stores
+			[Constants.fb.field.STORES]: stores,
+			[Constants.fb.field.ONSALE]: onSale
 		});
 		return true;
 	}
@@ -100,10 +105,15 @@ export default class ListManager {
 	 * @param {Map<StoreType, Listing>} stores
 	 */
 	static update(id, description, image, stores) {
+		let onSale = stores.steam.onSale
+			|| stores.xbox.onSale || stores.playstation.onSale
+			|| stores.nintendo.onSale || stores.itch.onSale;
+
 		ListManager.instance.ref.doc(id).set({
 			[Constants.fb.field.DESCRIPTION]: description,
 			[Constants.fb.field.IMAGE]: image,
-			[Constants.fb.field.STORES]: stores
+			[Constants.fb.field.STORES]: stores,
+			[Constants.fb.field.ONSALE]: onSale
 		}, {merge: true});
 	}
 
