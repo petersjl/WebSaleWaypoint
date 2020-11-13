@@ -2,7 +2,6 @@ import Constants from "./constants.js";
 import Game from "../model/game.js";
 import Listing from "../model/listing.js";
 import Store from "../model/store.js";
-import AuthManager from "../authManager.js";
 
 export default class Conversions {
 	/**
@@ -21,11 +20,19 @@ export default class Conversions {
 			wishlisted
 		);
 		const stores = snapshot.get(Constants.fb.field.STORES);
-		game.stores.set(Store.ITCH, Listing.fromObject(stores.itch));
-		game.stores.set(Store.NINTENDO, Listing.fromObject(stores.nintendo));
-		game.stores.set(Store.PLAYSTATION, Listing.fromObject(stores.playstation));
-		game.stores.set(Store.STEAM, Listing.fromObject(stores.steam));
-		game.stores.set(Store.XBOX, Listing.fromObject(stores.xbox));
+		if (stores === undefined) {
+			game.stores.set(Store.ITCH, new Listing());
+			game.stores.set(Store.NINTENDO, new Listing());
+			game.stores.set(Store.PLAYSTATION, new Listing());
+			game.stores.set(Store.STEAM, new Listing());
+			game.stores.set(Store.XBOX, new Listing());
+		} else {
+			game.stores.set(Store.ITCH, Listing.fromObject(stores.itch));
+			game.stores.set(Store.NINTENDO, Listing.fromObject(stores.nintendo));
+			game.stores.set(Store.PLAYSTATION, Listing.fromObject(stores.playstation));
+			game.stores.set(Store.STEAM, Listing.fromObject(stores.steam));
+			game.stores.set(Store.XBOX, Listing.fromObject(stores.xbox));
+		}
 		game.id = snapshot.id;
 		return game;
 	}
