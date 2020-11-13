@@ -143,35 +143,35 @@ export default class PageSales extends Page {
 		let steam = game.stores.get(Store.STEAM);
 		detail.steam.price.val(steam.price ? steam.price : "");
 		detail.steam.sale.val(steam.sale ? steam.sale : "");
-		detail.steam.image.attr("src", `img/steam/${steam.getIcon()}.png`)
+		detail.steam.image.attr("src", `img/steam/${steam.getIcon()}.png`);
 
 		//xbox
 		let xbox = game.stores.get(Store.XBOX);
 		detail.xbox.price.val(xbox.price ? xbox.price : "");
 		detail.xbox.sale.val(xbox.sale ? xbox.sale : "");
-		detail.xbox.image.attr("src", `img/xbox/${xbox.getIcon()}.png`)
+		detail.xbox.image.attr("src", `img/xbox/${xbox.getIcon()}.png`);
 
 		//playstation
 		let playstation = game.stores.get(Store.PLAYSTATION);
 		detail.playstation.price.val(playstation.price ? playstation.price : "");
 		detail.playstation.sale.val(playstation.sale ? playstation.sale : "");
-		detail.playstation.image.attr("src", `img/playstation/${playstation.getIcon()}.png`)
+		detail.playstation.image.attr("src", `img/playstation/${playstation.getIcon()}.png`);
 
 		//itch
 		let itch = game.stores.get(Store.ITCH);
 		detail.itch.price.val(itch.price ? itch.price : "");
 		detail.itch.sale.val(itch.sale ? itch.sale : "");
-		detail.itch.image.attr("src", `img/itch/${itch.getIcon()}.png`)
+		detail.itch.image.attr("src", `img/itch/${itch.getIcon()}.png`);
 
 		//nintendo
 		let nintendo = game.stores.get(Store.NINTENDO);
 		detail.nintendo.price.val(nintendo.price ? nintendo.price : "");
 		detail.nintendo.sale.val(nintendo.sale ? nintendo.sale : "");
-		detail.nintendo.image.attr("src", `img/nintendo/${nintendo.getIcon()}.png`)
+		detail.nintendo.image.attr("src", `img/nintendo/${nintendo.getIcon()}.png`);
 
 		detail.wishlist.on("click", () => console.log("TODO: add to wishlist"));
 
-		this.views.detailDialog.modal.modal("show")
+		this.views.detailDialog.modal.modal("show");
 		
 	}
 
@@ -181,7 +181,7 @@ export default class PageSales extends Page {
 	 * @param {number} price
 	 * @param {number} sale
 	 */
-	updateStoreImage(image, price, sale){
+	updateStoreImage(image, price, sale) {
 		
 	}
 
@@ -202,8 +202,7 @@ export default class PageSales extends Page {
 		clone.find(".game-store-nintendo").attr("src", `img/nintendo/${game.stores.get(Store.NINTENDO).getIcon()}.png`);
 		clone.on("click", () => {
 			this.populateDetailView(game)
-		}
-			)
+		});
 		return clone;
 	}
 }
