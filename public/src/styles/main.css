@@ -52,6 +52,10 @@
 	color: var(--colorSale);
 }
 
+#dialogDetail p, #dialogDetail .btn.btn-primary.collapse-button {
+	margin-bottom: 0;
+}
+
 .btn.btn-primary.collapse-button {
 	color: var(--colorTextPrimary);
 	padding: 0px .75rem;

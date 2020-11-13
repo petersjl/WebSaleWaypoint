@@ -152,7 +152,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<div>
-							<h5 class="modal-title">Game title</h5>
+							<h5 class="modal-title" id="detailTitle">Game title</h5>
 							<p class="detailDev" id="detailDev">Developer</p>
 						</div>
 						<img class="detail-wishlist" id="detailWishlist" src="/img/favorite_no.png">
@@ -168,8 +168,8 @@
 
 						<div class="collapse" id="collapseAbout">
 							<div class="form-group bmd-form-group collapse-input">
-								<label for="detailInputAbout" class="bmd-label-floating">About</label>
-								<textarea type="text" class="form-control" id="detailInputAbout" style="height:auto"></textarea>
+								<label for="detailInputAbout" class="bmd-label-static">About</label>
+								<textarea type="text" class="form-control" id="detailInputAbout"></textarea>
 							</div>
 						</div>
 
@@ -182,8 +182,8 @@
 
 						<div class="collapse" id="collapseImage">
 							<div class="form-group bmd-form-group collapse-input">
-								<label for="detailInputImage" class="bmd-label-floating">Image</label>
-								<input type="text" class="form-control" id="detailInputImage">
+								<label for="detailInputImage" class="bmd-label-static">Image</label>
+								<input type="text" class="form-control" id="detailInputImage" value=" ">
 								<span class="bmd-help">A nice image for the game</span>
 							</div>
 						</div>
@@ -194,11 +194,11 @@
 								<img id="detailImageSteam" src="img/steam/yes.png"/>
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputSteamPrice" class="bmd-label-floating">Steam price</label>
+								<label for="detailInputSteamPrice" class="bmd-label-static">Steam price</label>
 								<input type="number" step="0.01" min="0" class="form-control" id="detailInputSteamPrice">
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputSteamSale" class="bmd-label-floating">Steam sale</label>
+								<label for="detailInputSteamSale" class="bmd-label-static">Steam sale</label>
 								<input type="number" step="1" min="0" max="100" class="form-control" id="detailInputSteamSale">
 							</div>
 						</div>
@@ -209,11 +209,11 @@
 								<img id="detailImageXbox" src="img/xbox/yes.png"/>
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputXboxPrice" class="bmd-label-floating">Xbox price</label>
+								<label for="detailInputXboxPrice" class="bmd-label-static">Xbox price</label>
 								<input type="number" step="0.01" min="0" class="form-control" id="detailInputXboxPrice">
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputXboxSale" class="bmd-label-floating">Xbox sale</label>
+								<label for="detailInputXboxSale" class="bmd-label-static">Xbox sale</label>
 								<input type="number" step="1" min="0" max="100" class="form-control" id="detailInputXboxSale">
 							</div>
 						</div>
@@ -224,11 +224,11 @@
 								<img id="detailImagePlaystation" src="img/playstation/yes.png"/>
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputPlaystationPrice" class="bmd-label-floating">Playstation price</label>
+								<label for="detailInputPlaystationPrice" class="bmd-label-static">Playstation price</label>
 								<input type="number" step="0.01" min="0" class="form-control" id="detailInputPlaystationPrice">
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputPlaystationSale" class="bmd-label-floating">Playstation sale</label>
+								<label for="detailInputPlaystationSale" class="bmd-label-static">Playstation sale</label>
 								<input type="number" step="1" min="0" max="100" class="form-control" id="detailInputPlaystationSale">
 							</div>
 						</div>
@@ -239,11 +239,11 @@
 								<img id="detailImageItch" src="img/itch/yes.png"/>
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputItchPrice" class="bmd-label-floating">Itch price</label>
+								<label for="detailInputItchPrice" class="bmd-label-static">Itch price</label>
 								<input type="number" step="0.01" min="0" class="form-control" id="detailInputItchPrice">
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputItchSale" class="bmd-label-floating">Itch sale</label>
+								<label for="detailInputItchSale" class="bmd-label-static">Itch sale</label>
 								<input type="number" step="1" min="0" max="100" class="form-control" id="detailInputItchSale">
 							</div>
 						</div>
@@ -254,18 +254,18 @@
 								<img id="detailImageNintendo" src="img/nintendo/yes.png"/>
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputNintendoPrice" class="bmd-label-floating">Nintendo price</label>
+								<label for="detailInputNintendoPrice" class="bmd-label-static">Nintendo price</label>
 								<input type="number" step="0.01" min="0" class="form-control" id="detailInputNintendoPrice">
 							</div>
 							<div class="form-group bmd-form-group">
-								<label for="detailInputNintendoSale" class="bmd-label-floating">Nintendo sale</label>
+								<label for="detailInputNintendoSale" class="bmd-label-static">Nintendo sale</label>
 								<input type="number" step="1" min="0" max="100" class="form-control" id="detailInputNintendoSale">
 							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
 						<button class="btn btn-secondary" type="button" data-dismiss="modal">CANCEL</button>
-						<button id="submitGameAdd" class="btn btn-sale" type="button" data-dismiss="modal">SAVE CHANGES</button>
+						<button id="detailSubmitChanges" class="btn btn-sale" type="button" data-dismiss="modal">SAVE CHANGES</button>
 					  </div>
 				</div>
 			</div>

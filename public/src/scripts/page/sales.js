@@ -26,6 +26,20 @@ export default class PageSales extends Page {
 				playstation: {price: $("#inputPlaystationPrice"), sale: $("#inputPlaystationSale")},
 				itch: {price: $("#inputItchPrice"), sale: $("#inputItchSale")},
 				nintendo: {price: $("#inputNintendoPrice"), sale: $("#inputNintendoSale")}
+			},
+			detailDialog: {
+				modal: $("#dialogDetail"),
+				submit: $("#detailSubmitChanges"),
+				title: $("#detailTitle"),
+				developer: $("#detailDev"),
+				wishlist: $("#detailWishlist"),
+				description: $("#detailInputAbout"),
+				image: $("#detailInputImage"),
+				steam: {price: $("#detailInputSteamPrice"), sale: $("#detailInputSteamSale"), image: $("#detailImageSteam")},
+				xbox: {price: $("#detailInputXboxPrice"), sale: $("#detailInputXboxSale"), image: $("#detailImageXbox")},
+				playstation: {price: $("#detailInputPlaystationPrice"), sale: $("#detailInputPlaystationSale"), image: $("#detailImagePlaystation")},
+				itch: {price: $("#detailInputItchPrice"), sale: $("#detailInputItchSale"), image: $("#detailImageItch")},
+				nintendo: {price: $("#detailInputNintendoPrice"), sale: $("#detailInputNintendoSale"), image: $("#detailImageNintendo")}
 			}
 		};
 	}
@@ -38,7 +52,7 @@ export default class PageSales extends Page {
 			ListManager.instance.snapshots.forEach(item => {
 				const game = Conversions.gameFromSnapshot(item);
 				for (let i = 0; i < 1; i++) {
-					this.views.games.append(PageSales.createGameView(game));
+					this.views.games.append(this.createGameView(game));
 				}
 			});
 		});
@@ -116,11 +130,68 @@ export default class PageSales extends Page {
 	}
 
 	/**
+	 * Populate the fields of the detail view and set listeners
+	 * @param {Game} game 
+	 */
+	populateDetailView(game) {
+		let detail = this.views.detailDialog;
+		detail.title.html(game.title);
+		detail.developer.html(game.developer);
+		detail.description.val(game.description);
+		detail.image.val(game.image);
+
+		//steam
+		let steam = game.stores.get(Store.STEAM);
+		detail.steam.price.val(steam.price ? steam.price : "");
+		detail.steam.sale.val(steam.sale ? steam.sale : "");
+		detail.steam.image.attr("src", `img/steam/${steam.getIcon()}.png`)
+
+		//xbox
+		let xbox = game.stores.get(Store.XBOX);
+		detail.xbox.price.val(xbox.price ? xbox.price : "");
+		detail.xbox.sale.val(xbox.sale ? xbox.sale : "");
+		detail.xbox.image.attr("src", `img/xbox/${xbox.getIcon()}.png`)
+
+		//playstation
+		let playstation = game.stores.get(Store.PLAYSTATION);
+		detail.playstation.price.val(playstation.price ? playstation.price : "");
+		detail.playstation.sale.val(playstation.sale ? playstation.sale : "");
+		detail.playstation.image.attr("src", `img/playstation/${playstation.getIcon()}.png`)
+
+		//itch
+		let itch = game.stores.get(Store.ITCH);
+		detail.itch.price.val(itch.price ? itch.price : "");
+		detail.itch.sale.val(itch.sale ? itch.sale : "");
+		detail.itch.image.attr("src", `img/itch/${itch.getIcon()}.png`)
+
+		//nintendo
+		let nintendo = game.stores.get(Store.NINTENDO);
+		detail.nintendo.price.val(nintendo.price ? nintendo.price : "");
+		detail.nintendo.sale.val(nintendo.sale ? nintendo.sale : "");
+		detail.nintendo.image.attr("src", `img/nintendo/${nintendo.getIcon()}.png`)
+
+		detail.wishlist.on("click", () => console.log("TODO: add to wishlist"));
+
+		this.views.detailDialog.modal.modal("show")
+		
+	}
+
+	/**
+	 * Sets the given image to the correct source
+	 * @param {*} image 
+	 * @param {number} price
+	 * @param {number} sale
+	 */
+	updateStoreImage(image, price, sale){
+		
+	}
+
+	/**
 	 * Create a new Game view
 	 * @param {Game} game
 	 * @return {HTMLElement}
 	 */
-	static createGameView(game) {
+	createGameView(game) {
 		let template = $("#templateGame").contents();
 		let clone = template.clone(true, true);
 		clone.find(".game-image").attr("src", game.image);
@@ -129,6 +200,10 @@ export default class PageSales extends Page {
 		clone.find(".game-store-playstation").attr("src", `img/playstation/${game.stores.get(Store.PLAYSTATION).getIcon()}.png`);
 		clone.find(".game-store-itch").attr("src", `img/itch/${game.stores.get(Store.ITCH).getIcon()}.png`);
 		clone.find(".game-store-nintendo").attr("src", `img/nintendo/${game.stores.get(Store.NINTENDO).getIcon()}.png`);
+		clone.on("click", () => {
+			this.populateDetailView(game)
+		}
+			)
 		return clone;
 	}
 }
