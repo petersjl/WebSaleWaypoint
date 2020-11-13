@@ -45,4 +45,10 @@ $(() => {
 		checkForRedirects();
 		page.main();
 	});
+
+	setInterval(() => {
+		$("textarea").each(function(_textarea) {
+			this.style.height = this.scrollHeight + "px";
+		});
+	});
 });
