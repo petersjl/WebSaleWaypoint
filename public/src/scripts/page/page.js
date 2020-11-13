@@ -26,6 +26,11 @@ export default class Page {
 		$("#linkAbout").on("click", this.redirect.bind(this, "./about.html"));
 		$("#logout").on("click", AuthManager.signOut);
 		$("#content").animate({opacity: 1}, Page.fade);
+
+		$(".store-link").on("click", (event) => {
+			let store = $(event.target).data("store");
+			this.redirect("./stores.html?store=" + store);
+		});
 	}
 
 	redirect(url) {
